@@ -1,0 +1,5 @@
+Created log file: log.txt in /home/fs/Dokumenter/2025/Desember/Basic_IO/Basic_IO
+CREATION DATE:27.11.2025 10:18:39
+STATUS:CONNECTED
+EVENTS:192.168.0.1 connected to the server..
+TIMESTAMP:27.11.2025 11:19:04

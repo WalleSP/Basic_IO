@@ -1,0 +1,5 @@
+Created log file: log.txt in /home/fs/Dokumenter/2025/Desember/Basic_IO/Basic_IO
+CREATION DATE:27.11.2025 11:16:55
+STATUS:BLOCKED
+EVENTS:45.222.0.1 was blocked by the firewall..
+TIMESTAMP:27.11.2025 11:17:48
