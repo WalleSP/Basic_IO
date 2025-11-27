@@ -37,11 +37,20 @@ public class LsCommand
                 continue;
             }
 
+            var attributes = File.GetAttributes(entry);
+            bool isDirectory = attributes.HasFlag(FileAttributes.Directory);
+
             if (showLongOutput)
             {
-                var furtherFileInformation = new FileInfo(entry);
-                string type = furtherFileInformation.Attributes.HasFlag(FileAttributes.Directory) ? "DIR" : "FILE";
-                Console.WriteLine($"{type} {furtherFileInformation.Length,10} bytes {fileNames}");
+                if (isDirectory)
+                {
+                    Console.WriteLine($"Directory: {"-",10} {fileNames}");
+                }
+                else
+                {
+                    var info = new FileInfo(entry);
+                    Console.WriteLine($"File: {info.Length,10} bytes {fileNames}");
+                }
             }
             else
             {

@@ -19,3 +19,10 @@
 git branch dev
 git checkout dev
 ```
+#### Commiting code from a different branch than main
+```sh
+
+git add . # same as on main
+git commit -m "my commit message"
+git push --set-upstream origin dev
+```
