@@ -106,8 +106,20 @@ public class FileOperations : IFileOperations
 
     private List<Log> logs = new List<Log>()
     {
-        new Log {Filename = "log.txt", CreationDate = File.GetCreationTimeUtc("log.txt"), eventStatus = EventStatus.CONNECTED}
+        new Log {Filename = "log.txt", CreationDate = File.GetCreationTimeUtc("log.txt"), eventStatus = EventStatus.CONNECTED, TimeStamp = DateTime.Now, LoggedEvents = "192.168.0.2 connected.."},
+        new Log {Filename = "log.txt", CreationDate = File.GetCreationTime("log.txt"), eventStatus = EventStatus.DISCONNECTED, TimeStamp = DateTime.Now, LoggedEvents = "192.168.0.1 disconnected from the server.."},
+        new Log {Filename = "log.txt", CreationDate = File.GetCreationTime("log.txt"), eventStatus = EventStatus.BLOCKED, TimeStamp = DateTime.Now, LoggedEvents = "45.222.0.1 was blocked by the firewall.."}
     };
+
+    private string GetAllLogEntries()
+    {
+        foreach (var log in logs)
+        {
+            var output = $"log.CreationDate";
+            return output;
+        }
+        return output
+    }
 
     /// <summary>
     /// Writes a new logfile with content
@@ -130,5 +142,10 @@ public class FileOperations : IFileOperations
     public void ReadLogFile()
     {
 
+    }
+
+    public void TestLogfileContent()
+    {
+        Console.WriteLine(GetAllLogEntries());
     }
 }
